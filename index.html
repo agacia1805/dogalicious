@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="img/border-collie.png" sizes="16x16">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title></title>
+</head>
+<body>
+    <div class="app_container">
+        <header class="app_header">
+            <h1 class="header_title">Title</h1>
+        </header>
+        <div class="input_wrapper">
+            <form action="">
+                <label for="inputSearch"></label>
+                <input type="text" class="input_search" id="inputSearch" placeholder="Search for a dog...">
+            </form>
+        </div>
+        <div class="section_container">
+            <div class="image_wrapper">
+                <button class="button_search--random">Choose a random dog</button>
+                <img src="" alt="Image of a dog" class="img--main" >
+            </div>
+            <div class="data_wrapper">
+                <h2 class="data_heading" id="dogBreed">Dog breed</h2>
+                <div class="data_item">
+                    <h3 class="data_item-title">Temperament</h3>
+                    <p class="data_item-text" id="dogTemperament"></p>
+                </div>
+                <div class="data_item">
+                    <h3 class="data_item-title">Weight</h3>
+                    <p class="data_item-text" id="dogWeight"></p>
+                </div>
+                <div class="data_item">
+                    <h3 class="data_item-title">Size</h3>
+                    <p class="data_item-text" id="dogSize"></p>
+                </div>
+                <div class="data_item">
+                    <h3 class="data_item-title">Lifespan</h3>
+                    <p class="data_item-text" id="dogLifespan"></p>
+                </div>
+                <div class="data_item">
+                    <h3 class="data_item-title">Origin</h3>
+                    <p class="data_item-text" id="dogOrigin"></p>
+                </div>
+                <div class="data_item">
+                    <h3 class="data_item-title">Facts</h3>
+                    <p class="data_item-text" id="dogFacts"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script src="app.js"></script>
+</body>
+</html>
