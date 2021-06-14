@@ -72,19 +72,30 @@ body{
 }
 
 .button_search--random {
+    border: none;
+    border-radius: 50%;
+    height: 8rem;
+    padding: 1.5rem;
     position: absolute;
+    bottom: 0;
+    right: 3%;
+    width: 8rem;
 }
 
-.img--main {
-    position: absolute;
+
+.img_random {
+    height: 4.5rem;
+    width: 5rem;
+
 }
+
 
 .data_wrapper {
     background-color: var(--color-seanymph);
     border-radius: 3rem 3rem 0 0;
     color: var(--color-white);
     margin-top: 15rem;
-    padding: 26rem 4rem 4rem 4rem;
+    padding: 25rem 4rem 4rem 4rem;
 }
 
 .data_heading {
@@ -122,210 +133,12 @@ body{
     margin-left: 1rem;
 }
 
-
-.icon-afghan-hound:before {
-    content: "\e900";
+.img_main {
+    width: 60%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-46%, -50%);
 }
-
-.icon-airedale:before {
-    content: "\e901";
-}
-
-.icon-akitas:before {
-    content: "\e902";
-}
-
-.icon-american-staffordshire-terrier:before {
-    content: "\e903";
-}
-
-.icon-basset-houd:before {
-    content: "\e904";
-}
-
-.icon-beagle:before {
-    content: "\e905";
-}
-
-.icon-bedlington-terrier:before {
-    content: "\e906";
-}
-
-.icon-bernese-mountain:before {
-    content: "\e907";
-}
-
-.icon-bichon-frise:before {
-    content: "\e908";
-}
-
-.icon-bichon:before {
-    content: "\e909";
-}
-
-.icon-border-collie:before {
-    content: "\e90a";
-}
-
-.icon-boxer:before {
-    content: "\e90b";
-}
-
-.icon-bulldog:before {
-    content: "\e90c";
-}
-
-.icon-bullmastiff:before {
-    content: "\e90d";
-}
-
-.icon-bullterrier:before {
-    content: "\e90e";
-}
-
-.icon-chihuahua:before {
-    content: "\e90f";
-}
-
-.icon-chinese-crested:before {
-    content: "\e910";
-}
-
-.icon-chow-chow:before {
-    content: "\e911";
-}
-
-.icon-collie:before {
-    content: "\e912";
-}
-
-.icon-corgi:before {
-    content: "\e913";
-}
-
-.icon-dachshund:before {
-    content: "\e914";
-}
-
-.icon-dalmatian:before {
-    content: "\e915";
-}
-
-.icon-doberman:before {
-    content: "\e916";
-}
-
-.icon-english-cocker-spaniel:before {
-    content: "\e917";
-}
-
-.icon-english-mastiff:before {
-    content: "\e918";
-}
-
-.icon-french-bulldog:before {
-    content: "\e919";
-}
-
-.icon-german-sheperd:before {
-    content: "\e91a";
-}
-
-.icon-greyhound:before {
-    content: "\e91b";
-}
-
-.icon-husky:before {
-    content: "\e91c";
-}
-
-.icon-jack-russell-terrier:before {
-    content: "\e91d";
-}
-
-.icon-japanese-chin:before {
-    content: "\e91e";
-}
-
-.icon-kurzhaar:before {
-    content: "\e91f";
-}
-
-.icon-malamute:before {
-    content: "\e920";
-}
-
-.icon-mastiff:before {
-    content: "\e921";
-}
-
-.icon-miniature-schnauzer:before {
-    content: "\e922";
-}
-
-.icon-newfoundland:before {
-    content: "\e923";
-}
-
-.icon-pharaoh-hound:before {
-    content: "\e924";
-}
-
-.icon-pointer:before {
-    content: "\e925";
-}
-
-.icon-pomeranian:before {
-    content: "\e926";
-}
-
-.icon-poodle:before {
-    content: "\e927";
-}
-
-.icon-pug:before {
-    content: "\e928";
-}
-
-.icon-rottweiler:before {
-    content: "\e929";
-}
-
-.icon-saluki:before {
-    content: "\e92a";
-}
-
-.icon-shar-pei:before {
-    content: "\e92b";
-}
-
-.icon-sheltie:before {
-    content: "\e92c";
-}
-
-.icon-shih-tzu:before {
-    content: "\e92d";
-}
-
-.icon-springer-spaniel:before {
-    content: "\e92e";
-}
-
-.icon-st-bernard:before {
-    content: "\e92f";
-}
-
-.icon-tibetan-mastiff:before {
-    content: "\e930";
-}
-
-.icon-yorkshire-terrier:before {
-    content: "\e931";
-}
-
-
-
-
-
 
 
