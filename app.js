@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const iconValue = {
     Afghan_hound: '2',
     Airedale: '4',
