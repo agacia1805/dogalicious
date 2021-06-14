@@ -17,22 +17,25 @@ body{
 .app_container {
     max-width: 50rem;
     margin: auto;
-    padding-top: 3rem;
+    padding-top: 8rem;
 }
 
 .app_header {
     color: var(--color-dovegrey);
-    font-size: 3rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
 }
 
 .header_title {
-    text-align: center;
+    padding-bottom: 3rem;
+    text-align: left;
 }
 
 .input_wrapper {
+    margin: auto;
     max-width: 35rem;
-    width: 100%;
-    margin: auto;;
+    width: 80%;
 }
 
 .input_search {
@@ -49,6 +52,15 @@ body{
     outline: none;
     border: none;
     box-shadow: 0 0 0.8rem 0.4rem rgb(0, 0, 0, 0.4);
+}
+
+.input_list {
+
+}
+
+.input_list-item {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
 }
 
 .section_container {
@@ -71,22 +83,29 @@ body{
     width: 100%;
 }
 
+.img_main {
+    left: 50%;
+    opacity: 0.6;
+    position: absolute;
+    top: 50%;
+    transform: translate(-46%, -50%);
+    width: 60%;
+}
+
 .button_search--random {
     border: none;
     border-radius: 50%;
     height: 8rem;
-    padding: 1.5rem;
+    padding: 1rem;
     position: absolute;
     bottom: 0;
     right: 3%;
     width: 8rem;
 }
 
-
 .img_random {
-    height: 4.5rem;
-    width: 5rem;
-
+    height: 5.5rem;
+    width: 6rem;
 }
 
 
@@ -119,6 +138,7 @@ body{
     display: flex;
     font-size: 2rem;
     justify-content: center;
+    padding: 5rem;
 }
 
 .footer_link:hover {
@@ -133,12 +153,6 @@ body{
     margin-left: 1rem;
 }
 
-.img_main {
-    width: 60%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-46%, -50%);
-}
+
 
 
