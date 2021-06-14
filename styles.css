@@ -44,6 +44,13 @@ body{
     width: 100%;
 }
 
+.input_search:active,
+.input_search:focus {
+    outline: none;
+    border: none;
+    box-shadow: 0 0 0.8rem 0.4rem rgb(0, 0, 0, 0.4);
+}
+
 .section_container {
     padding-top: 3rem;
     position: relative;
@@ -52,20 +59,16 @@ body{
 .image_items {
     background-color: var(--color-burningsand);
     border-radius: 50%;
+    height: auto;
     margin: auto;
+    padding-top: 80%;
     position: relative;
     width: 80%;
 }
 
 .image_wrapper {
     position: absolute;
-}
-
-.image_items:before {
-    content: "";
-    display: block;
-    padding-top: 100%;
-    position: absolute;
+    width: 100%;
 }
 
 .button_search--random {
