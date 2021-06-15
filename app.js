@@ -22,21 +22,30 @@ const iconValue = {
 };
 
 const searchInput = document.getElementById('inputSearch');
+const suggestions = document.getElementById('suggestions');
+
 searchInput.addEventListener('change', displayMatches);
 searchInput.addEventListener('keyup', displayMatches);
 
 const breeds = [];
-let requestOptions = {
- method: 'GET',
-};
 
-fetch(`https://api.thedogapi.com/v1/breeds`, requestOptions)
+fetch(`https://api.thedogapi.com/v1/breeds`)
  .then(response => response.json())
   .then(data => breeds.push(...data));
 
 function displayMatches() {
  const matchArray = findMatches(this.value, breeds);
  console.log(this.value);
+ const html = matchArray.map(dog => {
+    const regex = new RegExp(this.value, 'gi');
+    const dogName = dog.name.replace(regex, `<span class="text--highlighted">${this.value}</span>`);
+    return `
+    <li>
+      <span class="name">${dogName}</span>
+    </li>
+    `;
+  }).join('');
+  suggestions.innerHTML = html;
 }
 
 function findMatches(wordToMatch, breeds) {
