@@ -95,6 +95,7 @@ body{
 .button_search--random {
     border: none;
     border-radius: 50%;
+    cursor: url("img/border-collie.png"), auto;
     height: 8rem;
     padding: 1rem;
     position: absolute;
@@ -104,10 +105,14 @@ body{
 }
 
 .img_random {
+    cursor: url("img/border-collie.png"), auto;
     height: 5.5rem;
     width: 6rem;
 }
 
+.img_random:active {
+    cursor: url("img/border-collie.png"), auto;
+}
 
 .data_wrapper {
     background-color: var(--color-seanymph);
