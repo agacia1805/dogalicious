@@ -119,16 +119,22 @@ function getICON(icon) {
          return "img/dog breeds/bichon-frise.png";
      case iconValue.Border_collie:
          return "img/dog breeds/border-collie.png";
+     case iconValue.Boston_terrier:
+         return "img/dog breeds/boston-terrier.png";
      case iconValue.Boxer:
          return "img/dog breeds/boxer.png";
      case iconValue.Bullmastiff:
          return "img/dog breeds/bullmastiff.png";
      case iconValue.Bullterrier:
          return "img/dog breeds/bullterrier.png";
+     case iconValue.Chihuahua:
+         return "img/dog breeds/chihuahua.png";
      case iconValue.Chinese_crested:
          return "img/dog breeds/chinese-crested.png";
      case iconValue.Chow_chow:
          return "img/dog breeds/chow-chow.png";
+     case iconValue.Corgi:
+         return "img/dog breeds/corgi.png";
      case iconValue.Dachshund:
          return "img/dog breeds/dachshund.png";
      case iconValue.Dalmatian:
@@ -177,6 +183,8 @@ function getICON(icon) {
          return "img/dog breeds/shar-pei.png";
      case iconValue.Sheltie:
          return "img/dog breeds/sheltie.png";
+     case iconValue.Shiba_inu:
+         return "img/dog breeds/shiba-inu.png";
      case iconValue.Shihpoo:
          return "img/dog breeds/shih-tzu.png";
      case iconValue.Shih_tzu:
@@ -187,6 +195,8 @@ function getICON(icon) {
          return "img/dog breeds/st-bernard.png";
      case iconValue.Tibetan_mastiff:
          return "img/dog breeds/tibetan-mastiff.png";
+     case iconValue.Xoloitzcuintli:
+         return "img/dog breeds/xoloitzcuintli.png";
      case iconValue.Yorkshire_terrier:
          return "img/dog breeds/yorkshire-terrier.png";
      default:
