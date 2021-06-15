@@ -41,16 +41,33 @@ function fetchDogApi(dogKey, dogId) {
    let temperament = data.temperament;
    let dogWeight =  data.weight.metric;
    let dogSize = data.height.metric;
-   let lifespan = data.life_span;
+   let dogLifespan = data.life_span;
+   let dogOrigin =  data.origin;
+   let breedFor = data.bred_for;
+   let icon = data.id;
 
    document.getElementById('dogBreed').innerHTML = breedName;
    document.getElementById('dogTemperament').innerHTML = temperament;
    document.getElementById('dogWeight').innerHTML = `${dogWeight} kg`;
    document.getElementById('dogSize').innerHTML = `${dogSize} cm`;
-   document.getElementById('dogLifespan').innerHTML = lifespan;
+   document.getElementById('dogLifespan').innerHTML = dogLifespan;
+   document.getElementById('dogOrigin').innerHTML = dogOrigin;
+   document.getElementById('dogFacts').innerHTML = breedFor;
+   document.getElementById('dogIcon').src = getICON('icon');
    })
    .catch(error => console.log('error', error));
 }
 
 fetchDogApi();
 
+
+function getICON(icon) {
+ switch (icon) {
+     case iconValue.Afghan_hound:
+         return "/img/dog breeds/afghan-hound.png";
+     case iconValue.Airedale:
+         return "/img/dog breeds/airedale.png";
+     default:
+         return "img/dog%20breeds/pawprint%20(2).png";
+ }
+}
