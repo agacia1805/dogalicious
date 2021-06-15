@@ -54,8 +54,31 @@ function fetchDogApi(dogKey, dogId) {
 
 fetchDogApi();
 
-function getRandomDog() {
+// function getRandomDog() {
+//     const ids = iconValue.value;
+//     const keys = Object.keys(ids);
+//     const randomIndex = Math.floor(Math.random() * keys.length);
+//
+// }
+//
+// getRandomDog();
 
+document.ready(function(){
+    let dogId = '2';
 
-}
+    $.getJSON(`https://api.thedogapi.com/v1/breeds/${dogId}`,
+        {
+            tags: keyword,
+            tagmode: "any",
+            format: "json"
+        },
+        function(data) {
+            var rnd = Math.floor(Math.random() * data.items.length);
 
+            var image_src = data.items[rnd]['media']['m'].replace("_m", "_b");
+
+            $('body').css('background-image', "url('" + image_src + "')");
+
+        });
+
+});
