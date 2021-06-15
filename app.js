@@ -41,3 +41,7 @@ function fetchDogApi(dogKey, dogId) {
 
 fetchDogApi();
 
+function getRandomDog() {
+
+}
+
