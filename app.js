@@ -59,7 +59,7 @@ const suggestions = document.getElementById('suggestions');
 
 searchInput.addEventListener('change', displayMatches);
 searchInput.addEventListener('keyup', displayMatches);
-searchInput.addEventListener('click', removeMatches)
+searchInput.addEventListener('click', removeMatches);
 
 const breeds = [];
 
@@ -141,12 +141,9 @@ function getRandomDog() {
             let randomIndex = Math.floor(Math.random() * keys);
             console.log(randomIndex);
             fetchDogApi(dogKey, randomIndex);
-
 }
 
-
 document.getElementById('searchRandom').addEventListener('click', getRandomDog);
-
 
 function getICON(icon) {
  switch (icon) {
