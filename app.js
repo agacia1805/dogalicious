@@ -22,7 +22,7 @@ const iconValue = {
 };
 
 function fetchDogApi(dogKey, dogId) {
- dogId = '13';
+ dogId = '2';
 
  var myHeaders = new Headers();
  myHeaders.append("Content-Type", "application/json");
@@ -35,7 +35,20 @@ function fetchDogApi(dogKey, dogId) {
  
  fetch(`https://api.thedogapi.com/v1/breeds/${dogId}`, requestOptions)
    .then(response => response.json())
-   .then(result => console.log(result))
+   .then(data => {
+    console.log(data)
+   let breedName =  data.name;
+   let temperament = data.temperament;
+   let dogWeight =  data.weight.metric;
+   let dogSize = data.height.metric;
+   let lifespan = data.life_span;
+
+   document.getElementById('dogBreed').innerHTML = breedName;
+   document.getElementById('dogTemperament').innerHTML = temperament;
+   document.getElementById('dogWeight').innerHTML = `${dogWeight} kg`;
+   document.getElementById('dogSize').innerHTML = `${dogSize} cm`;
+   document.getElementById('dogLifespan').innerHTML = lifespan;
+   })
    .catch(error => console.log('error', error));
 }
 
