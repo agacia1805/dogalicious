@@ -56,5 +56,6 @@ fetchDogApi();
 
 function getRandomDog() {
 
+
 }
 
