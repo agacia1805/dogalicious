@@ -1,59 +1,3 @@
-const iconValue = {
-    Afghan_hound: 2,
-    Airedale: 4,
-    Akita: 6,
-    American_staffordshire: 16,
-    Basenji: 28,
-    Basset_hound: 30,
-    Beagle: 31,
-    Bedlington_terrier: 34,
-    Bernese_mountain: 41,
-    Bichon_frise: 42,
-    Border_collie: 50,
-    Boxer: 55,
-    Bulldog: 63,
-    Bullmastiff: 64,
-    Bullterrier: 61,
-    Cane_corso: 67,
-    Chinese_crested: 78,
-    Chow_chow: 81,
-    Collie: 88,
-    Dachshund: 91,
-    Dalmatian: 92,
-    Doberman: 94,
-    Dogo_argentino: 95,
-    English_cocker_spaniel: 86,
-    French_bulldog: 113,
-    German_shepherd: 115,
-    Greyhound: 127,
-    Husky: 226,
-    Jack_russel_terrier: 139,
-    Japanese_chin: 140,
-    Labradoodle: 148,
-    Labrador_retriever: 149,
-    Leonberger: 155,
-    Kurzhaar: 116,
-    Malamute: 9,
-    Miniature_Schnauzer: 168,
-    Newfoundland: 171,
-    Papillon: 181,
-    Pharaoh_hound: 188,
-    Pomeranian: 193,
-    Poodle: 196,
-    Pug: 201,
-    Rottweiler: 210,
-    Saluki: 213,
-    Samoyed: 214,
-    Shar_pei: 79,
-    Sheltie: 221,
-    Shihpoo: 224,
-    Shih_tzu: 223,
-    Springer_spaniel: 103,
-    St_bernard: 212,
-    Tibetan_mastiff: 244,
-    Yorkshire_terrier: 264,
-};
-
 const searchInput = document.getElementById('inputSearch');
 const suggestions = document.getElementById('suggestions');
 
@@ -99,13 +43,18 @@ function findMatches(wordToMatch, breeds) {
    const regex = new RegExp(wordToMatch, 'gi');
    return dog.name.match(regex)
  })
-};
-
-function removeMatches() {
-    suggestions.innerHTML = '';
 }
 
+function removeMatches() {
+    // suggestions.innerHTML = '';
+    // if (suggestions.onfocus === false) {
+    //     suggestions.value = '';
+    // }
+    if (suggestions.onfocus === false) {
+        suggestions.innerHTML = '';
 
+    }
+}
 
 // ----------------------------------------- // 
 function fetchDogApi(dogKey, dogId) {
@@ -169,6 +118,8 @@ function getICON(icon) {
          return "img/dog breeds/airedale.png";
      case iconValue.Akita:
          return "img/dog breeds/akitas.png";
+     case iconValue.Alaskan_husky:
+         return "img/dog breeds/husky.png";
      case iconValue.American_staffordshire:
          return "img/dog breeds/american-staffordshire-terrier.png";
      case iconValue.Basset_hound:
@@ -183,16 +134,22 @@ function getICON(icon) {
          return "img/dog breeds/bichon-frise.png";
      case iconValue.Border_collie:
          return "img/dog breeds/border-collie.png";
+     case iconValue.Boston_terrier:
+         return "img/dog breeds/boston-terrier.png";
      case iconValue.Boxer:
          return "img/dog breeds/boxer.png";
      case iconValue.Bullmastiff:
          return "img/dog breeds/bullmastiff.png";
      case iconValue.Bullterrier:
          return "img/dog breeds/bullterrier.png";
+     case iconValue.Chihuahua:
+         return "img/dog breeds/chihuahua.png";
      case iconValue.Chinese_crested:
          return "img/dog breeds/chinese-crested.png";
      case iconValue.Chow_chow:
          return "img/dog breeds/chow-chow.png";
+     case iconValue.Corgi:
+         return "img/dog breeds/corgi.png";
      case iconValue.Dachshund:
          return "img/dog breeds/dachshund.png";
      case iconValue.Dalmatian:
@@ -209,10 +166,14 @@ function getICON(icon) {
          return "img/dog breeds/greyhound.png";
      case iconValue.Husky:
          return "img/dog breeds/husky.png";
+     case iconValue.Jack_russel_terrier:
+         return "img/dog breeds/jack-russell-terrier.png";
      case iconValue.Japanese_chin:
          return "img/dog breeds/japanese-chin.png";
      case iconValue.Kurzhaar:
          return "img/dog breeds/kurzhaar.png";
+     case iconValue.Labrador_retriever:
+         return "img/dog breeds/labrador.png";
      case iconValue.Malamute:
          return "img/dog breeds/malamute.png";
      case iconValue.Miniature_Schnauzer:
@@ -225,6 +186,8 @@ function getICON(icon) {
          return "img/dog breeds/pomeranian.png";
      case iconValue.Poodle:
          return "img/dog breeds/poodle.png";
+     case iconValue.Poodle_mini:
+         return "img/dog breeds/poodle.png";
      case iconValue.Pug:
          return "img/dog breeds/pug.png";
      case iconValue.Rottweiler:
@@ -235,6 +198,8 @@ function getICON(icon) {
          return "img/dog breeds/shar-pei.png";
      case iconValue.Sheltie:
          return "img/dog breeds/sheltie.png";
+     case iconValue.Shiba_inu:
+         return "img/dog breeds/shiba-inu.png";
      case iconValue.Shihpoo:
          return "img/dog breeds/shih-tzu.png";
      case iconValue.Shih_tzu:
@@ -245,6 +210,8 @@ function getICON(icon) {
          return "img/dog breeds/st-bernard.png";
      case iconValue.Tibetan_mastiff:
          return "img/dog breeds/tibetan-mastiff.png";
+     case iconValue.Xoloitzcuintli:
+         return "img/dog breeds/xoloitzcuintli.png";
      case iconValue.Yorkshire_terrier:
          return "img/dog breeds/yorkshire-terrier.png";
      default:
