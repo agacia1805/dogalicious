@@ -97,8 +97,8 @@ function getICON(icon) {
          return "/img/dog breeds/akitas.png";
      case iconValue.American_staffordshire:
          return "/img/dog breeds/american-staffordshire-terrier.png";
-     case iconValue.Basset_houn:
-         return "/img/dog breeds/basset-houd.png";
+     case iconValue.Basset_hound:
+         return "/img/dog breeds/basset-hound.png";
      case iconValue.Beagle:
          return "/img/dog breeds/beagle.png";
      case iconValue.Bedlington_terrier:
@@ -111,7 +111,7 @@ function getICON(icon) {
          return "/img/dog breeds/border-collie.png";
      case iconValue.Boxer:
          return "/img/dog breeds/boxer.png";
-     case iconValue.Bullmastif:
+     case iconValue.Bullmastiff:
          return "/img/dog breeds/bullmastiff.png";
      case iconValue.Bullterrier:
          return "/img/dog breeds/bullterrier.png";
