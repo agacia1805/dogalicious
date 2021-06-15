@@ -21,6 +21,32 @@ const iconValue = {
     German_shepherd: 115,
 };
 
+const searchInput = document.getElementById('inputSearch');
+searchInput.addEventListener('change', displayMatches);
+searchInput.addEventListener('keyup', displayMatches);
+
+const breeds = [];
+let requestOptions = {
+ method: 'GET',
+};
+
+fetch(`https://api.thedogapi.com/v1/breeds`, requestOptions)
+ .then(response => response.json())
+  .then(data => breeds.push(...data));
+
+function displayMatches() {
+ const matchArray = findMatches(this.value, breeds);
+ console.log(this.value);
+}
+
+function findMatches(wordToMatch, breeds) {
+ return breeds.filter(dog => {
+   // here we need to figure out if the city or state matches what was searched
+   const regex = new RegExp(wordToMatch, 'gi');
+   return dog.name.match(regex)
+ })
+};
+
 function fetchDogApi(dogKey, dogId) {
  dogId = '50';
 
@@ -29,14 +55,14 @@ function fetchDogApi(dogKey, dogId) {
  myHeaders.append("x-api-key", dogKey);
  
 
- var requestOptions = {
+ let requestOptions = {
    method: 'GET',
  };
  
  fetch(`https://api.thedogapi.com/v1/breeds/${dogId}`, requestOptions)
    .then(response => response.json())
    .then(data => {
-    console.log(data)
+    console.log(data);
    let breedName =  data.name;
    let temperament = data.temperament;
    let dogWeight =  data.weight.metric;
