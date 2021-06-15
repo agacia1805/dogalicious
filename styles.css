@@ -115,23 +115,19 @@ body{
 .button_search--random {
     border: none;
     border-radius: 50%;
-    cursor: url("img/border-collie.png"), auto;
+    bottom: 0;
+    cursor: pointer;
     height: 8rem;
     padding: 1rem;
+    pointer-events: auto;
     position: absolute;
-    bottom: 0;
     right: 3%;
     width: 8rem;
 }
 
 .img_random {
-    cursor: url("img/border-collie.png"), auto;
     height: 5.5rem;
     width: 6rem;
-}
-
-.img_random:active {
-    cursor: url("img/border-collie.png"), auto;
 }
 
 .data_wrapper {
