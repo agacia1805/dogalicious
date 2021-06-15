@@ -3,6 +3,7 @@ const iconValue = {
     Airedale: 4,
     Akita: 6,
     American_staffordshire: 16,
+    Basenji: 28,
     Basset_hound: 30,
     Beagle: 31,
     Bedlington_terrier: 34,
@@ -10,28 +11,39 @@ const iconValue = {
     Bichon_frise: 42,
     Border_collie: 50,
     Boxer: 55,
+    Bulldog: 63,
     Bullmastiff: 64,
     Bullterrier: 61,
+    Cane_corso: 67,
     Chinese_crested: 78,
     Chow_chow: 81,
+    Collie: 88,
+    Dachshund: 91,
     Dalmatian: 92,
     Doberman: 94,
+    Dogo_argentino: 95,
     English_cocker_spaniel: 86,
     French_bulldog: 113,
     German_shepherd: 115,
     Greyhound: 127,
     Husky: 226,
+    Jack_russel_terrier: 139,
     Japanese_chin: 140,
+    Labradoodle: 148,
+    Labrador_retriever: 149,
+    Leonberger: 155,
     Kurzhaar: 116,
     Malamute: 9,
     Miniature_Schnauzer: 168,
     Newfoundland: 171,
+    Papillon: 181,
     Pharaoh_hound: 188,
     Pomeranian: 193,
-    Poodle: 197,
+    Poodle: 196,
     Pug: 201,
     Rottweiler: 210,
     Saluki: 213,
+    Samoyed: 214,
     Shar_pei: 79,
     Sheltie: 221,
     Shihpoo: 224,
@@ -168,6 +180,8 @@ function getICON(icon) {
          return "img/dog breeds/chinese-crested.png";
      case iconValue.Chow_chow:
          return "img/dog breeds/chow-chow.png";
+     case iconValue.Dachshund:
+         return "img/dog breeds/dachshund.png";
      case iconValue.Dalmatian:
          return "img/dog breeds/dalmatian.png";
      case iconValue.Doberman:
