@@ -46,6 +46,7 @@ const suggestions = document.getElementById('suggestions');
 
 searchInput.addEventListener('change', displayMatches);
 searchInput.addEventListener('keyup', displayMatches);
+searchInput.addEventListener('click', removeMatches)
 
 const breeds = [];
 
@@ -70,11 +71,14 @@ function displayMatches() {
 
 function findMatches(wordToMatch, breeds) {
  return breeds.filter(dog => {
-   // here we need to figure out if the city or state matches what was searched
    const regex = new RegExp(wordToMatch, 'gi');
    return dog.name.match(regex)
  })
 };
+
+function removeMatches() {
+    suggestions.innerHTML = '';
+}
 
 function fetchDogApi(dogKey, dogId) {
  // dogId = '50';

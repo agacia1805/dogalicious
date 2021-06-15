@@ -77,8 +77,10 @@ body{
     background: white;
     border-radius: 3rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.14);
+    font-family: 'Roboto', sans-serif;
     opacity: 0.9;
     padding: 1.5rem;
+    text-transform: uppercase;
   }
 
 .section_container {
