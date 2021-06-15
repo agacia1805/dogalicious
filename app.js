@@ -34,6 +34,7 @@ const iconValue = {
     Saluki: 213,
     Shar_pei: 79,
     Sheltie: 221,
+    Shihpoo: 224,
     Shih_tzu: 223,
     Springer_spaniel: 103,
     St_bernard: 212,
@@ -120,7 +121,7 @@ function fetchDogApi(dogKey, dogId) {
 fetchDogApi();
 
 
-function getRandomDog(dogId) {
+function getRandomDog() {
 
             const keys = 264;
             let randomIndex = Math.floor(Math.random() * keys);
@@ -175,6 +176,48 @@ function getICON(icon) {
          return "img/dog breeds/french-bulldog.png";
      case iconValue.German_shepherd:
          return "img/dog breeds/german-shepherd.png";
+     case iconValue.Greyhound:
+         return "img/dog breeds/greyhound.png";
+     case iconValue.Husky:
+         return "img/dog breeds/husky.png";
+     case iconValue.Japanese_chin:
+         return "img/dog breeds/japanese-chin.png";
+     case iconValue.Kurzhaar:
+         return "img/dog breeds/kurzhaar.png";
+     case iconValue.Malamute:
+         return "img/dog breeds/malamute.png";
+     case iconValue.Miniature_Schnauzer:
+         return "img/dog breeds/miniature-schnauzer.png";
+     case iconValue.Newfoundland:
+         return "img/dog breeds/newfoundland.png";
+     case iconValue.Pharaoh_hound:
+         return "img/dog breeds/pharaoh-hound.png";
+     case iconValue.Pomeranian:
+         return "img/dog breeds/pomeranian.png";
+     case iconValue.Poodle:
+         return "img/dog breeds/poodle.png";
+     case iconValue.Pug:
+         return "img/dog breeds/pug.png";
+     case iconValue.Rottweiler:
+         return "img/dog breeds/rottweiler.png";
+     case iconValue.Saluki:
+         return "img/dog breeds/saluki.png";
+     case iconValue.Shar_pei:
+         return "img/dog breeds/shar-pei.png";
+     case iconValue.Sheltie:
+         return "img/dog breeds/sheltie.png";
+     case iconValue.Shihpoo:
+         return "img/dog breeds/shih-tzu.png";
+     case iconValue.Shih_tzu:
+         return "img/dog breeds/shih-tzu.png";
+     case iconValue.Springer_spaniel:
+         return "img/dog breeds/springer-spaniel.png";
+     case iconValue.St_bernard:
+         return "img/dog breeds/st-bernard.png";
+     case iconValue.Tibetan_mastiff:
+         return "img/dog breeds/tibetan-mastiff.png";
+     case iconValue.Yorkshire_terrier:
+         return "img/dog breeds/yorkshire-terrier.png";
      default:
          return "img/pawprint%20(2).png";
  }
