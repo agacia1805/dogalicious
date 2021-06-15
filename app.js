@@ -41,6 +41,41 @@ const iconValue = {
     Yorkshire_terrier: 264,
 };
 
+const searchInput = document.getElementById('inputSearch');
+const suggestions = document.getElementById('suggestions');
+
+searchInput.addEventListener('change', displayMatches);
+searchInput.addEventListener('keyup', displayMatches);
+
+const breeds = [];
+
+fetch(`https://api.thedogapi.com/v1/breeds`)
+ .then(response => response.json())
+  .then(data => breeds.push(...data));
+
+function displayMatches() {
+ const matchArray = findMatches(this.value, breeds);
+ console.log(this.value);
+ const html = matchArray.map(dog => {
+    const regex = new RegExp(this.value, 'gi');
+    const dogName = dog.name.replace(regex, `<span class="text--highlighted">${this.value}</span>`);
+    return `
+    <li>
+      <span class="name">${dogName}</span>
+    </li>
+    `;
+  }).join('');
+  suggestions.innerHTML = html;
+}
+
+function findMatches(wordToMatch, breeds) {
+ return breeds.filter(dog => {
+   // here we need to figure out if the city or state matches what was searched
+   const regex = new RegExp(wordToMatch, 'gi');
+   return dog.name.match(regex)
+ })
+};
+
 function fetchDogApi(dogKey, dogId) {
  // dogId = '50';
 
@@ -49,7 +84,7 @@ function fetchDogApi(dogKey, dogId) {
  myHeaders.append("x-api-key", dogKey);
  
 
- var requestOptions = {
+ let requestOptions = {
    method: 'GET',
  };
  

@@ -63,6 +63,24 @@ body{
     font-weight: 400;
 }
 
+.form_search {
+    position: relative;
+}
+
+#suggestions {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+#suggestions li {
+    background: white;
+    border-radius: 3rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.14);
+    opacity: 0.9;
+    padding: 1.5rem;
+  }
+
 .section_container {
     padding-top: 3rem;
     position: relative;
@@ -156,6 +174,10 @@ body{
 
 .footer_logo {
     margin-left: 1rem;
+}
+
+.text--highlighted {
+    background-color: var(--color-shilo);
 }
 
 
