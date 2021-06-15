@@ -80,6 +80,8 @@ function removeMatches() {
     suggestions.innerHTML = '';
 }
 
+
+// ----------------------------------------- // 
 function fetchDogApi(dogKey, dogId) {
  // dogId = '50';
 
