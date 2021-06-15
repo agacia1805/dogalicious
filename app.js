@@ -57,9 +57,11 @@ const iconValue = {
 const searchInput = document.getElementById('inputSearch');
 const suggestions = document.getElementById('suggestions');
 
+
 searchInput.addEventListener('change', displayMatches);
 searchInput.addEventListener('keyup', displayMatches);
 searchInput.addEventListener('click', removeMatches);
+
 
 const breeds = [];
 
@@ -70,17 +72,27 @@ fetch(`https://api.thedogapi.com/v1/breeds`)
 function displayMatches() {
  const matchArray = findMatches(this.value, breeds);
  console.log(this.value);
- const html = matchArray.map(dog => {
+ const suggestBreed = matchArray.map(dog => {
     const regex = new RegExp(this.value, 'gi');
     const dogName = dog.name.replace(regex, `<span class="text--highlighted">${this.value}</span>`);
     return `
     <li>
-      <span class="name">${dogName}</span>
+      <span id="dogSearch">${dogName}</span>
     </li>
     `;
   }).join('');
-  suggestions.innerHTML = html;
+  suggestions.innerHTML = suggestBreed;
+
+const matchBreed = suggestions.children[0].innerText;
+console.log(matchBreed)
+//   matchBreed.addEventListener('click', findInfo);
+//   function findInfo() {
+//     console.log('Hi')
+//     };
+
 }
+
+
 
 function findMatches(wordToMatch, breeds) {
  return breeds.filter(dog => {
@@ -92,6 +104,7 @@ function findMatches(wordToMatch, breeds) {
 function removeMatches() {
     suggestions.innerHTML = '';
 }
+
 
 
 // ----------------------------------------- // 
@@ -141,9 +154,12 @@ function getRandomDog() {
             let randomIndex = Math.floor(Math.random() * keys);
             console.log(randomIndex);
             fetchDogApi(dogKey, randomIndex);
+
 }
 
+
 document.getElementById('searchRandom').addEventListener('click', getRandomDog);
+
 
 function getICON(icon) {
  switch (icon) {
