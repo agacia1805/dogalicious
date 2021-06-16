@@ -190,10 +190,16 @@ function getICON(icon) {
          return "img/dog breeds/poodle.png";
      case iconValue.Pug:
          return "img/dog breeds/pug.png";
+     case iconValue.Ridgeback:
+         return "img/dog breeds/ridgeback.png";
      case iconValue.Rottweiler:
          return "img/dog breeds/rottweiler.png";
      case iconValue.Saluki:
          return "img/dog breeds/saluki.png";
+     case iconValue.Scottish_terrier:
+         return "img/dog breeds/yorkshire-terrier.png";
+     case iconValue.Sealyham_terrier:
+         return "img/dog breeds/yorkshire-terrier.png";
      case iconValue.Shar_pei:
          return "img/dog breeds/shar-pei.png";
      case iconValue.Sheltie:
