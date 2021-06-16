@@ -19,9 +19,11 @@ function displayMatches() {
  const suggestBreed = matchArray.map(dog => {
     const regex = new RegExp(this.value, 'gi');
     const dogName = dog.name.replace(regex, `<span class="text--highlighted">${this.value}</span>`);
+    const dogID = dog.id;
     return `
     <li>
       <span id="dogSearch">${dogName}</span>
+      <span id="dogSearchId">id: ${dogID}</span>
     </li>
     `;
   }).join('');
