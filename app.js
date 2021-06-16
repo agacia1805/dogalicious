@@ -12,7 +12,9 @@ const breeds = [];
 
 fetch(`https://api.thedogapi.com/v1/breeds`)
     .then(response => response.json())
-    .then(data => breeds.push(...data));
+    .then(data => {breeds.push(...data);
+        console.log(data);
+    });
 
 function displayMatches() {
     const matchArray = findMatches(this.value, breeds);
