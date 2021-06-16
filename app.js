@@ -57,10 +57,20 @@ function removeMatches() {
     // if (suggestions.onfocus === false) {
     //     suggestions.value = '';
     // }
-    if (suggestions.onfocus === false) {
-        suggestions.innerHTML = '';
+    // if (suggestions.onfocus === false) {
+    //     suggestions.innerHTML = '';
+    //
+    // }
+    const searchInput = document.getElementById('inputSearch');
+    const searchResults = document.getElementById('suggestions');
+    function onClick(){
+        if( !(document.getElementById('suggestions')).is(":hover")&&
+            !(document.getElementById('inputSearch')).is(":hover")){
+                searchInput.hidden;
+            searchResults.hidden;
+             }}
 
-    }
+        document.addEventListener('click', onClick);
 }
 
 // ----------------------------------------- // 
@@ -166,7 +176,7 @@ function getICON(icon) {
          return "img/dog breeds/german-shepherd.png";
      case iconValue.Greyhound:
          return "img/dog breeds/greyhound.png";
-     case iconValue.Husky:
+     case iconValue.Siberian_husky:
          return "img/dog breeds/husky.png";
      case iconValue.Jack_russel_terrier:
          return "img/dog breeds/jack-russell-terrier.png";
@@ -192,7 +202,7 @@ function getICON(icon) {
          return "img/dog breeds/poodle.png";
      case iconValue.Pug:
          return "img/dog breeds/pug.png";
-     case iconValue.Ridgeback:
+     case iconValue.Rhodesian_ridgeback:
          return "img/dog breeds/ridgeback.png";
      case iconValue.Rottweiler:
          return "img/dog breeds/rottweiler.png";
@@ -216,6 +226,8 @@ function getICON(icon) {
          return "img/dog breeds/springer-spaniel.png";
      case iconValue.St_bernard:
          return "img/dog breeds/st-bernard.png";
+     case iconValue.Thai_ridgeback:
+         return "img/dog breeds/ridgeback.png";
      case iconValue.Tibetan_mastiff:
          return "img/dog breeds/tibetan-mastiff.png";
      case iconValue.Xoloitzcuintli:
