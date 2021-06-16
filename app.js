@@ -33,17 +33,13 @@ function displayMatches() {
     
     matchBreed.forEach(function(item, index){
         item.addEventListener('click', function(){
-            console.log(matchArray);
             let resultId = matchArray[index].id;
             fetchDogApi(dogKey, resultId)
+                suggestions.innerHTML = '';
         });
       });
 
 }
-
-
-
-
 
 function findMatches(wordToMatch, breeds) {
  return breeds.filter(dog => {
@@ -53,25 +49,17 @@ function findMatches(wordToMatch, breeds) {
 }
 
 function removeMatches() {
-    // suggestions.innerHTML = '';
-    // if (suggestions.onfocus === false) {
-    //     suggestions.value = '';
-    // }
-    // if (suggestions.onfocus === false) {
-    //     suggestions.innerHTML = '';
-    // }
-    // function onClick(){
-    //     if( !(document.getElementById('suggestions')).is(":hover")&&
-    //         !(document.getElementById('inputSearch')).is(":hover")){
-    //             searchInput.hidden;
-    //         searchResults.hidden;
-    //          }}
-    document.querySelector("#search").addEventListener('click', function () {
-        document.querySelector("#getLyric").innerHTML = '';
-    })
+    let ignoreClickOnMeElement = suggestions;
+
+    document.addEventListener('click', function(event) {
+        let isClickInsideElement = ignoreClickOnMeElement.contains(event.target);
+        if (!isClickInsideElement) {
+            suggestions.innerHTML = '';
+        }
+    });
 }
 
-// ----------------------------------------- // 
+// ----------------------------------------- //
 function fetchDogApi(dogKey, dogId) {
 
     var myHeaders = new Headers();
