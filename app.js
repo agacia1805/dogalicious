@@ -102,8 +102,7 @@ function fetchDogApi(dogKey, dogId) {
 }
 
 function getRandomDog() {
-
-    const keys = 264;
+    const keys = breeds.length;
     let randomIndex = Math.floor(Math.random() * keys);
     console.log(randomIndex);
     fetchDogApi(dogKey, randomIndex);
@@ -130,12 +129,16 @@ function getICON(icon) {
          return "img/dog breeds/australian-shepherd.png";
      case iconValue.Basset_hound:
          return "img/dog breeds/basset-hound.png";
+     case iconValue.Basenji:
+         return "img/dog breeds/Basenji.png";
      case iconValue.Beagle:
          return "img/dog breeds/beagle.png";
      case iconValue.Bedlington_terrier:
          return "img/dog breeds/bedlington-terrier.png";
      case iconValue.Bernese_mountain:
          return "img/dog breeds/bernese-mountain.png";
+     case iconValue.Belgian_malinois:
+         return "img/dog breeds/Belgian-Malinois.png";
      case iconValue.Bichon_frise:
          return "img/dog breeds/bichon-frise.png";
      case iconValue.Border_collie:
@@ -174,8 +177,12 @@ function getICON(icon) {
          return "img/dog breeds/golden-retriever.png";
      case iconValue.Great_dane:
          return "img/dog breeds/great-dane.png";
+     case iconValue.Great_pyrenees:
+         return "img/dog breeds/Great-Pyrenees.png";
      case iconValue.Greyhound:
          return "img/dog breeds/greyhound.png";
+     case iconValue.Havanese:
+         return "img/dog breeds/Havanese.png";
      case iconValue.Siberian_husky:
          return "img/dog breeds/husky.png";
      case iconValue.Jack_russel_terrier:
