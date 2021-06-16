@@ -33,9 +33,9 @@ function displayMatches() {
     
     matchBreed.forEach(function(item, index){
         item.addEventListener('click', function(){
-            console.log(matchArray);
             let resultId = matchArray[index].id;
             fetchDogApi(dogKey, resultId)
+                suggestions.innerHTML = '';
         });
       });
 
@@ -49,27 +49,17 @@ function findMatches(wordToMatch, breeds) {
 }
 
 function removeMatches() {
-    // suggestions.innerHTML = '';
-    // if (suggestions.onfocus === false) {
-    //     suggestions.value = '';
-    // }
-    // if (suggestions.onfocus === false) {
-    //     suggestions.innerHTML = '';
-    //
-    // }
-    const searchInput = document.getElementById('inputSearch');
-    const searchResults = document.getElementById('suggestions');
-    function onClick(){
-        if( !(document.getElementById('suggestions')).is(":hover")&&
-            !(document.getElementById('inputSearch')).is(":hover")){
-                searchInput.hidden;
-            searchResults.hidden;
-             }}
+    let ignoreClickOnMeElement = suggestions;
 
-        document.addEventListener('click', onClick);
+    document.addEventListener('click', function(event) {
+        let isClickInsideElement = ignoreClickOnMeElement.contains(event.target);
+        if (!isClickInsideElement) {
+            suggestions.innerHTML = '';
+        }
+    });
 }
 
-// ----------------------------------------- // 
+// ----------------------------------------- //
 function fetchDogApi(dogKey, dogId) {
 
     var myHeaders = new Headers();
@@ -130,6 +120,8 @@ function getICON(icon) {
          return "img/dog breeds/husky.png";
      case iconValue.American_staffordshire:
          return "img/dog breeds/american-staffordshire-terrier.png";
+     case iconValue.Australian_shepherd:
+         return "img/dog breeds/australian-shepherd.png";
      case iconValue.Basset_hound:
          return "img/dog breeds/basset-hound.png";
      case iconValue.Beagle:
@@ -156,6 +148,8 @@ function getICON(icon) {
          return "img/dog breeds/chinese-crested.png";
      case iconValue.Chow_chow:
          return "img/dog breeds/chow-chow.png";
+     case iconValue.Collie:
+         return "img/dog breeds/collie.png";
      case iconValue.Corgi:
          return "img/dog breeds/corgi.png";
      case iconValue.Dachshund:
@@ -170,6 +164,10 @@ function getICON(icon) {
          return "img/dog breeds/french-bulldog.png";
      case iconValue.German_shepherd:
          return "img/dog breeds/german-shepherd.png";
+     case iconValue.Golden_retriever:
+         return "img/dog breeds/golden-retriever.png";
+     case iconValue.Great_dane:
+         return "img/dog breeds/great-dane.png";
      case iconValue.Greyhound:
          return "img/dog breeds/greyhound.png";
      case iconValue.Siberian_husky:
@@ -184,12 +182,16 @@ function getICON(icon) {
          return "img/dog breeds/labrador.png";
      case iconValue.Malamute:
          return "img/dog breeds/malamute.png";
+     case iconValue.Maltese:
+         return "img/dog breeds/maltese.png";
      case iconValue.Miniature_Schnauzer:
          return "img/dog breeds/miniature-schnauzer.png";
      case iconValue.Newfoundland:
          return "img/dog breeds/newfoundland.png";
      case iconValue.Pharaoh_hound:
          return "img/dog breeds/pharaoh-hound.png";
+     case iconValue.Pit_bull:
+         return "img/dog breeds/pit-bull.png";
      case iconValue.Pomeranian:
          return "img/dog breeds/pomeranian.png";
      case iconValue.Poodle:
