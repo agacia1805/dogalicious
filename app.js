@@ -41,10 +41,6 @@ function displayMatches() {
 
 }
 
-
-
-
-
 function findMatches(wordToMatch, breeds) {
  return breeds.filter(dog => {
    const regex = new RegExp(wordToMatch, 'gi');
