@@ -10,13 +10,13 @@ searchInput.addEventListener('click', removeMatches);
 const breeds = [];
 
 fetch(`https://api.thedogapi.com/v1/breeds`)
- .then(response => response.json())
-  .then(data => breeds.push(...data));
+    .then(response => response.json())
+    .then(data => breeds.push(...data));
 
 function displayMatches() {
- const matchArray = findMatches(this.value, breeds);
- console.log(this.value);
- const suggestBreed = matchArray.map(dog => {
+    const matchArray = findMatches(this.value, breeds);
+    console.log(this.value);
+    const suggestBreed = matchArray.map(dog => {
     const regex = new RegExp(this.value, 'gi');
     const dogName = dog.name.replace(regex, `<span class="text--highlighted">${this.value}</span>`);
     const dogID = dog.id;
@@ -26,15 +26,15 @@ function displayMatches() {
       <span id="dogSearchId">id: ${dogID}</span>
     </li>
     `;
-  }).join('');
-  suggestions.innerHTML = suggestBreed;
+    }).join('');
+    suggestions.innerHTML = suggestBreed;
 
-const matchBreed = suggestions.children[0].innerText;
-console.log(matchBreed)
-//   matchBreed.addEventListener('click', findInfo);
-//   function findInfo() {
-//     console.log('Hi')
-//     };
+    const matchBreed = suggestions.children[0].innerText;
+    console.log(matchBreed)
+    //   matchBreed.addEventListener('click', findInfo);
+    //   function findInfo() {
+    //     console.log('Hi')
+    //     };
 
 }
 
@@ -60,16 +60,14 @@ function removeMatches() {
 
 // ----------------------------------------- // 
 function fetchDogApi(dogKey, dogId) {
- // dogId = '50';
 
- var myHeaders = new Headers();
- myHeaders.append("Content-Type", "application/json");
- myHeaders.append("x-api-key", dogKey);
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("x-api-key", dogKey);
  
-
- let requestOptions = {
-   method: 'GET',
- };
+    let requestOptions = {
+        method: 'GET',
+    };
  
  fetch(`https://api.thedogapi.com/v1/breeds/${dogId}`, requestOptions)
    .then(response => response.json())
@@ -96,15 +94,12 @@ function fetchDogApi(dogKey, dogId) {
    .catch(error => console.log('error', error));
 }
 
-fetchDogApi();
-
-
 function getRandomDog() {
 
-            const keys = 264;
-            let randomIndex = Math.floor(Math.random() * keys);
-            console.log(randomIndex);
-            fetchDogApi(dogKey, randomIndex);
+    const keys = 264;
+    let randomIndex = Math.floor(Math.random() * keys);
+    console.log(randomIndex);
+    fetchDogApi(dogKey, randomIndex);
 
 }
 
