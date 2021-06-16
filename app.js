@@ -15,28 +15,33 @@ fetch(`https://api.thedogapi.com/v1/breeds`)
 
 function displayMatches() {
     const matchArray = findMatches(this.value, breeds);
-    console.log(this.value);
+    // console.log(this.value);
     const suggestBreed = matchArray.map(dog => {
     const regex = new RegExp(this.value, 'gi');
     const dogName = dog.name.replace(regex, `<span class="text--highlighted">${this.value}</span>`);
-    const dogID = dog.id;
+    let dogID = dog.id;
     return `
-    <li>
+    <li class="list_item">
       <span id="dogSearch">${dogName}</span>
       <span id="dogSearchId">id: ${dogID}</span>
     </li>
     `;
     }).join('');
     suggestions.innerHTML = suggestBreed;
-
-    const matchBreed = suggestions.children[0].innerText;
-    console.log(matchBreed)
-    //   matchBreed.addEventListener('click', findInfo);
-    //   function findInfo() {
-    //     console.log('Hi')
-    //     };
+  
+    const matchBreed = document.querySelectorAll('.list_item');
+    
+    matchBreed.forEach(function(item, index){
+        item.addEventListener('click', function(){
+            console.log(matchArray);
+            let resultId = matchArray[index].id;
+            fetchDogApi(dogKey, resultId)
+        });
+      });
 
 }
+
+
 
 
 
