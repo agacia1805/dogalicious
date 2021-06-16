@@ -4,6 +4,7 @@ const suggestions = document.getElementById('suggestions');
 
 searchInput.addEventListener('change', displayMatches);
 searchInput.addEventListener('keyup', displayMatches);
+searchInput.addEventListener('keypress', displayMatches);
 searchInput.addEventListener('click', removeMatches);
 
 
@@ -36,7 +37,7 @@ function displayMatches() {
     matchBreed.forEach(function(item, index){
         item.addEventListener('click', function(){
             let resultId = matchArray[index].id;
-            fetchDogApi(dogKey, resultId)
+            fetchDogApi(dogKey, resultId);
                 suggestions.innerHTML = '';
         });
       });
@@ -61,6 +62,11 @@ function removeMatches() {
     });
 }
 
+function navigateMatches() {
+    document.onkeydown(function (e) {
+
+    })
+}
 // ----------------------------------------- //
 function fetchDogApi(dogKey, dogId) {
 
@@ -234,6 +240,27 @@ function getICON(icon) {
          return "img/dog breeds/xoloitzcuintli.png";
      case iconValue.Yorkshire_terrier:
          return "img/dog breeds/yorkshire-terrier.png";
+     case iconValue.Aw_spaniel:
+         return "img/dog breeds/english-cocker-spaniel.png";
+     case iconValue.Boykin_spaniel:
+         return "img/dog breeds/english-cocker-spaniel.png";
+     case iconValue.Cavalier_spaniel:
+         return "img/dog breeds/english-cocker-spaniel.png";
+     case iconValue.Clumber_spaniel:
+         return "img/dog breeds/english-cocker-spaniel.png";
+     case iconValue.A_spaniel:
+         return "img/dog breeds/english-cocker-spaniel.png";
+     case iconValue.English_spaniel:
+         return "img/dog breeds/english-cocker-spaniel.png";
+     case iconValue.English_toy_spaniel:
+         return "img/dog breeds/english-cocker-spaniel.png";
+     case iconValue.Field_spaniel:
+         return "img/dog breeds/english-cocker-spaniel.png";
+     case iconValue.Tibetan_spaniel:
+         return "img/dog breeds/english-cocker-spaniel.png";
+     case iconValue.Welsh_spaniel:
+         return "img/dog breeds/english-cocker-spaniel.png";
+
      default:
          return "img/pawprint%20(2).png";
  }
