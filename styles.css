@@ -54,10 +54,6 @@ body{
     box-shadow: 0 0 0.8rem 0.4rem rgba(0, 0, 0, 0.4);
 }
 
-.input_list {
-
-}
-
 .input_list-item {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
@@ -157,6 +153,16 @@ body{
 .data_item-text {
     font-size: 1.5rem;
     font-style: italic;
+}
+
+.section_switch {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.section_switch_image {
+    width: 1.6rem;
 }
 
 .app_footer {
