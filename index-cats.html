@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/cat.png" sizes="16x16">
+    <title></title>
+</head>
+<body>
+<div class="app_container">
+    <header class="app_header">
+        <h1 class="header_title">#who's a bad boy?</h1>
+    </header>
+    <div class="input_wrapper">
+        <form class="form_search" autocomplete="off">
+            <label for="inputSearch"></label>
+            <input type="text" class="input_search" id="inputSearch" placeholder="Search for a cat..." autocomplete="off">
+            <ul class="input_list" id="suggestions">
+            </ul>
+        </form>
+    </div>
+    <div class="section_container">
+        <div class="image_wrapper">
+            <div class="image_items">
+                <img src="img/background.png" alt="Background image for cats" class="img_main" id="catIcon">
+            </div>
+            <div class="button_wrapper">
+                <button class="button_search--random" id="searchRandom">
+                    <img src="img/dice.png" alt="" class="img_random">
+                </button>
+            </div>
+        </div>
+        <div class="data_wrapper">
+            <h2 class="data_heading" id="catBreed">Cat breed</h2>
+            <div class="data_item">
+                <h3 class="data_item-title">Temperament</h3>
+                <p class="data_item-text" id="catTemperament"></p>
+            </div>
+            <div class="data_item">
+                <h3 class="data_item-title">Weight</h3>
+                <p class="data_item-text" id="catWeight"></p>
+            </div>
+            <div class="data_item">
+                <h3 class="data_item-title">Size</h3>
+                <p class="data_item-text" id="catSize"></p>
+            </div>
+            <div class="data_item">
+                <h3 class="data_item-title">Lifespan</h3>
+                <p class="data_item-text" id="catLifespan"></p>
+            </div>
+            <div class="data_item">
+                <h3 class="data_item-title">Origin</h3>
+                <p class="data_item-text" id="catOrigin"></p>
+            </div>
+            <div class="data_item">
+                <h3 class="data_item-title">Bred For</h3>
+                <p class="data_item-text" id="catFacts"></p>
+            </div>
+        </div>
+    </div>
+    <footer class="app_footer">
+            <span>Data downloaded from <a href="https://thecatapi.com/" class="footer_link" target="_blank">The Cat API</a>
+            </span>
+        <img src="img/cat.png" alt="" class="footer_logo">
+    </footer>
+</div>
+
+<script src="keys.js"></script>
+<script src="dogs.js"></script>
+<!--<script src="app-dogs.js"></script>-->
+<script src="app-cats.js"></script>
+
+</body>
+</html>
