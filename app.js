@@ -120,7 +120,7 @@ function showError () {
 
 function getRandomDog() {
     const keys = breeds.length;
-    let randomIndex = Math.floor(Math.random() * keys)
+    let randomIndex = Math.floor(Math.random() * keys);
     fetchDogApi(dogKey, randomIndex);
 }
 
