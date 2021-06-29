@@ -94,15 +94,15 @@ function fetchDogApi(dogKey, dogId) {
    document.getElementById('dogSize').innerHTML = `${dogSize} cm`;
    document.getElementById('dogLifespan').innerHTML = dogLifespan;
    document.getElementById('dogIcon').src = getICON(icon);
-    if(dogOrigin === undefined) {
-        document.getElementById('dogOrigin').innerHTML = '-';
-    } else {
+    if(typeof dogOrigin !== 'undefined') {
         document.getElementById('dogOrigin').innerHTML = dogOrigin;
-    }
-    if(breedFor === undefined) {
-        document.getElementById('dogFacts').innerHTML = '-';
     } else {
+        document.getElementById('dogOrigin').innerHTML = '-';
+    }
+    if(typeof breedFor !== 'undefined') {
         document.getElementById('dogFacts').innerHTML = breedFor;
+    } else {
+        document.getElementById('dogFacts').innerHTML = '-';
     }
 
    })
