@@ -110,12 +110,12 @@ function showError () {
     div.className = 'error-message';
     div.appendChild(document.createTextNode('Sorry, something went wrong'));
     const container = document.querySelector('.app__container');
-    const wrapper = document.querySelector('.data__wrapper');
-    container.insertAdjacentElement(wrapper, div);
+    const header = document.querySelector('.app__header');
+    container.insertBefore(div, header);
 
     setTimeout(function () {
         document.querySelector('.error-message').remove();
-    }, 4000);
+    }, 3200);
 }
 
 function getRandomDog() {
