@@ -61,11 +61,6 @@ function removeMatches() {
     });
 }
 
-function navigateMatches() {
-    document.onkeydown(function (e) {
-
-    })
-}
 // ----------------------------------------- //
 function fetchDogApi(dogKey, dogId) {
 
@@ -108,7 +103,19 @@ function fetchDogApi(dogKey, dogId) {
     }
 
    })
-   .catch(error => console.log('error', error));
+   .catch(error => showError('Choose a dog'));
+}
+function showError () {
+    const div = document.createElement('div');
+    div.className = 'error-message';
+    div.appendChild(document.createTextNode('Sorry, something went wrong'));
+    const container = document.querySelector('.app__container');
+    const wrapper = document.querySelector('.data__wrapper');
+    container.insertAdjacentElement(wrapper, div);
+
+    setTimeout(function () {
+        document.querySelector('.error-message').remove();
+    }, 4000);
 }
 
 function getRandomDog() {
