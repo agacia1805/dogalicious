@@ -41,7 +41,6 @@ function displayMatches() {
                 suggestions.innerHTML = '';
         });
       });
-
 }
 
 function findMatches(wordToMatch, breeds) {
@@ -96,7 +95,7 @@ function fetchDogApi(dogKey, dogId) {
    document.getElementById('dogWeight').innerHTML = `${dogWeight} kg`;
    document.getElementById('dogSize').innerHTML = `${dogSize} cm`;
    document.getElementById('dogLifespan').innerHTML = dogLifespan;
-   document.getElementById('dogIcon').src = getICON(icon);
+   document.getElementById('dogIcon').src = getDogBreedIcon(icon);
     if(dogOrigin === undefined) {
         document.getElementById('dogOrigin').innerHTML = '-';
     } else {
@@ -124,7 +123,7 @@ function getRandomDog() {
 document.getElementById('searchRandom').addEventListener('click', getRandomDog);
 
 
-function getICON(icon) {
+function getDogBreedIcon(icon) {
  switch (icon) {
      case iconValue.Afghan_hound:
          return "img/dog breeds/afghan-hound.png";
