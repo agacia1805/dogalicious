@@ -1,12 +1,10 @@
 const searchInput = document.getElementById('inputSearch');
 const suggestions = document.getElementById('suggestions');
 
-
 searchInput.addEventListener('change', displayMatches);
 searchInput.addEventListener('keyup', displayMatches);
 searchInput.addEventListener('keypress', displayMatches);
 searchInput.addEventListener('click', removeMatches);
-
 
 const breeds = [];
 
@@ -98,7 +96,6 @@ function fetchDogApi(dogKey, dogId) {
     } else {
         document.getElementById('dogFacts').innerHTML = bredFor;
     }
-
    })
    .catch(error => showError('Choose a dog'));
 }
@@ -121,9 +118,7 @@ function getRandomDog() {
     fetchDogApi(dogKey, randomIndex);
 }
 
-
 document.getElementById('searchRandom').addEventListener('click', getRandomDog);
-
 
 function getDogBreedIcon(icon) {
  switch (icon) {
@@ -277,7 +272,6 @@ function getDogBreedIcon(icon) {
          return "img/dog breeds/english-cocker-spaniel.png";
      case iconValue.Welsh_spaniel:
          return "img/dog breeds/english-cocker-spaniel.png";
-
      default:
          return "img/pawprint%20(2).png";
  }
