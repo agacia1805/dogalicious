@@ -18,15 +18,12 @@ fetch(`https://api.thedogapi.com/v1/breeds`)
 
 function displayMatches() {
     const matchArray = findMatches(this.value, breeds);
-    // console.log(this.value);
     const suggestBreed = matchArray.map(dog => {
     const regex = new RegExp(this.value, 'gi');
     const dogName = dog.name.replace(regex, `<span class="text--highlighted">${this.value}</span>`);
-    let dogID = dog.id;
     return `
-    <li class="list_item">
+    <li class="list__item">
       <span id="dogSearch">${dogName}</span>
-      <span id="dogSearchId">id: ${dogID}</span>
     </li>
     `;
     }).join('');
@@ -61,7 +58,7 @@ function removeMatches() {
     });
 }
 
-// ----------------------------------------- //
+// -----------------------------------------
 function fetchDogApi(dogKey, dogId) {
 
     var myHeaders = new Headers();
@@ -123,10 +120,8 @@ function showError () {
 
 function getRandomDog() {
     const keys = breeds.length;
-    let randomIndex = Math.floor(Math.random() * keys);
-    console.log(randomIndex);
+    let randomIndex = Math.floor(Math.random() * keys)
     fetchDogApi(dogKey, randomIndex);
-
 }
 
 
