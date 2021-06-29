@@ -29,7 +29,7 @@ function displayMatches() {
     }).join('');
     suggestions.innerHTML = suggestBreed;
   
-    const matchBreed = document.querySelectorAll('.list_item');
+    const matchBreed = document.querySelectorAll('.list__item');
     
     matchBreed.forEach(function(item, index){
         item.addEventListener('click', function(){
@@ -85,7 +85,7 @@ function fetchDogApi(dogKey, dogId) {
    let dogSize = data.height.metric;
    let dogLifespan = data.life_span;
    let dogOrigin =  data.origin;
-   let breedFor = data.bred_for;
+   let bredFor = data.bred_for;
    let icon = data.id;
 
    document.getElementById('dogBreed').innerHTML = breedName;
@@ -99,8 +99,8 @@ function fetchDogApi(dogKey, dogId) {
     } else {
         document.getElementById('dogOrigin').innerHTML = '-';
     }
-    if(typeof breedFor !== 'undefined') {
-        document.getElementById('dogFacts').innerHTML = breedFor;
+    if(typeof bredFor !== 'undefined') {
+        document.getElementById('dogFacts').innerHTML = bredFor;
     } else {
         document.getElementById('dogFacts').innerHTML = '-';
     }
