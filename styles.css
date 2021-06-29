@@ -42,7 +42,6 @@ body{
     border: none;
     border-radius: 3rem;
     box-shadow: 0 0 0.7rem 0.3rem rgba(0, 0, 0, 0.1);
-    font-size: 1.8rem;
     padding: 2rem;
     width: 100%;
 }
@@ -51,12 +50,7 @@ body{
 .input__search:focus {
     outline: none;
     border: none;
-    box-shadow: 0 0 0.8rem 0.4rem rgba(0, 0, 0, 0.4);
-}
-
-.input__list-item {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
+    box-shadow: 0 0 0.8rem 0.4rem rgba(0, 0, 0, 0.15);
 }
 
 .form__search {
@@ -197,9 +191,9 @@ body{
 }
 
 .error-message {
-    border: 0.1rem solid red;
+    border: 0.1rem solid var(--color-burningsand);
     border-radius: 2rem;
-    color: red;
+    color: var(--color-burningsand);
     font-size: 1.6rem;
     margin: 0 auto 1.4rem auto;
     padding: 0.5rem;

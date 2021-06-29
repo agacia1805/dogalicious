@@ -12,9 +12,7 @@ const breeds = [];
 
 fetch(`https://api.thedogapi.com/v1/breeds`)
     .then(response => response.json())
-    .then(data => {breeds.push(...data);
-        console.log(data);
-    });
+    .then(data => {breeds.push(...data)});
 
 function displayMatches() {
     const matchArray = findMatches(this.value, breeds);
@@ -72,7 +70,6 @@ function fetchDogApi(dogKey, dogId) {
  fetch(`https://api.thedogapi.com/v1/breeds/${dogId}`, requestOptions)
    .then(response => response.json())
    .then(data => {
-    console.log(data);
    let breedName =  data.name;
    let temperament = data.temperament;
    let dogWeight =  data.weight.metric;
