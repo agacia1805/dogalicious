@@ -18,19 +18,22 @@ fetch(`https://api.thedogapi.com/v1/breeds`)
 
 function displayMatches() {
     const matchArray = findMatches(this.value, breeds);
+    // console.log(this.value);
     const suggestBreed = matchArray.map(dog => {
     const regex = new RegExp(this.value, 'gi');
     const dogName = dog.name.replace(regex, `<span class="text--highlighted">${this.value}</span>`);
+    let dogID = dog.id;
     return `
-    <li class="list__item">
-      <span id="dogSearch">${dogName}</span
+    <li class="list_item">
+      <span id="dogSearch">${dogName}</span>
+      <span id="dogSearchId">id: ${dogID}</span>
     </li>
     `;
     }).join('');
     suggestions.innerHTML = suggestBreed;
-  
+
     const matchBreed = document.querySelectorAll('.list_item');
-    
+
     matchBreed.forEach(function(item, index){
         item.addEventListener('click', function(){
             let resultId = matchArray[index].id;
@@ -64,11 +67,11 @@ function fetchDogApi(dogKey, dogId) {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     myHeaders.append("x-api-key", dogKey);
- 
+
     let requestOptions = {
         method: 'GET',
     };
- 
+
  fetch(`https://api.thedogapi.com/v1/breeds/${dogId}`, requestOptions)
    .then(response => response.json())
    .then(data => {
@@ -91,21 +94,17 @@ function fetchDogApi(dogKey, dogId) {
     if(dogOrigin === undefined) {
         document.getElementById('dogOrigin').innerHTML = '-';
     } else {
-   document.getElementById('dogIcon').src = getDogBreedIcon(icon);
-    if(typeof dogOrigin !== 'undefined') {
         document.getElementById('dogOrigin').innerHTML = dogOrigin;
-    } else {
-        document.getElementById('dogOrigin').innerHTML = '-';
     }
-    if(typeof breedFor !== 'undefined') {
-        document.getElementById('dogFacts').innerHTML = breedFor;
-    } else {
+    if(breedFor === undefined) {
         document.getElementById('dogFacts').innerHTML = '-';
+    } else {
+        document.getElementById('dogFacts').innerHTML = breedFor;
     }
+
    })
    .catch(error => showError('Choose a dog'));
 }
-
 function showError () {
     const div = document.createElement('div');
     div.className = 'error-message';
@@ -124,9 +123,12 @@ function getRandomDog() {
     let randomIndex = Math.floor(Math.random() * keys);
     console.log(randomIndex);
     fetchDogApi(dogKey, randomIndex);
+
 }
 
+
 document.getElementById('searchRandom').addEventListener('click', getRandomDog);
+
 
 function getDogBreedIcon(icon) {
  switch (icon) {
