@@ -18,12 +18,15 @@ fetch(`https://api.thedogapi.com/v1/breeds`)
 
 function displayMatches() {
     const matchArray = findMatches(this.value, breeds);
+    // console.log(this.value);
     const suggestBreed = matchArray.map(dog => {
     const regex = new RegExp(this.value, 'gi');
     const dogName = dog.name.replace(regex, `<span class="text--highlighted">${this.value}</span>`);
+    let dogID = dog.id;
     return `
-    <li class="list__item">
-      <span id="dogSearch">${dogName}</span
+    <li class="list_item">
+      <span id="dogSearch">${dogName}</span>
+      <span id="dogSearchId">id: ${dogID}</span>
     </li>
     `;
     }).join('');
@@ -38,7 +41,6 @@ function displayMatches() {
                 suggestions.innerHTML = '';
         });
       });
-
 }
 
 function findMatches(wordToMatch, breeds) {
@@ -59,22 +61,17 @@ function removeMatches() {
     });
 }
 
-function navigateMatches() {
-    document.onkeydown(function (e) {
-
-    })
-}
 // ----------------------------------------- //
 function fetchDogApi(dogKey, dogId) {
 
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     myHeaders.append("x-api-key", dogKey);
- 
+
     let requestOptions = {
         method: 'GET',
     };
- 
+
  fetch(`https://api.thedogapi.com/v1/breeds/${dogId}`, requestOptions)
    .then(response => response.json())
    .then(data => {
@@ -93,20 +90,35 @@ function fetchDogApi(dogKey, dogId) {
    document.getElementById('dogWeight').innerHTML = `${dogWeight} kg`;
    document.getElementById('dogSize').innerHTML = `${dogSize} cm`;
    document.getElementById('dogLifespan').innerHTML = dogLifespan;
-   document.getElementById('dogIcon').src = getICON(icon);
-    if(typeof dogOrigin !== 'undefined') {
-        document.getElementById('dogOrigin').innerHTML = dogOrigin;
-    } else {
+   document.getElementById('dogIcon').src = getDogBreedIcon(icon);
+    if(dogOrigin === undefined) {
         document.getElementById('dogOrigin').innerHTML = '-';
     }
     if(typeof bredFor !== 'undefined') {
         document.getElementById('dogFacts').innerHTML = bredFor;
     } else {
+        document.getElementById('dogOrigin').innerHTML = dogOrigin;
+    }
+    if(breedFor === undefined) {
         document.getElementById('dogFacts').innerHTML = '-';
+    } else {
+        document.getElementById('dogFacts').innerHTML = breedFor;
     }
 
    })
-   .catch(error => console.log('error', error));
+   .catch(error => showError('Choose a dog'));
+}
+function showError () {
+    const div = document.createElement('div');
+    div.className = 'error-message';
+    div.appendChild(document.createTextNode('Sorry, something went wrong'));
+    const container = document.querySelector('.app__container');
+    const header = document.querySelector('.app__header');
+    container.insertBefore(div, header);
+
+    setTimeout(function () {
+        document.querySelector('.error-message').remove();
+    }, 3200);
 }
 
 function getRandomDog() {
@@ -121,7 +133,7 @@ function getRandomDog() {
 document.getElementById('searchRandom').addEventListener('click', getRandomDog);
 
 
-function getICON(icon) {
+function getDogBreedIcon(icon) {
  switch (icon) {
      case iconValue.Afghan_hound:
          return "img/dog breeds/afghan-hound.png";

@@ -58,7 +58,7 @@ body{
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
 }
-_
+
 .form__search {
     position: relative;
 }
@@ -189,6 +189,16 @@ _
 
 .text--highlighted {
     background-color: var(--color-shilo);
+}
+
+.error-message {
+    border: 0.1rem solid red;
+    border-radius: 2rem;
+    color: red;
+    font-size: 1.6rem;
+    margin: 0 auto 1.4rem auto;
+    padding: 0.5rem;
+    text-align: center;
 }
 
 
