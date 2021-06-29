@@ -71,13 +71,18 @@ body{
 
 #suggestions li {
     background: white;
-    border-radius: 3rem;
-    box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.15);
     cursor: pointer;
     font-family: 'Roboto', sans-serif;
-    opacity: 0.9;
+    opacity: 0.8;
     padding: 1.5rem;
     text-transform: uppercase;
+  }
+#suggestions li:first-child {
+    border-radius: 3rem 3rem 0 0;
+  }
+#suggestions li:last-child {
+    border-radius: 0 0 3rem 3rem;
   }
 
 .section__container {
