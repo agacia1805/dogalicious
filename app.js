@@ -96,10 +96,10 @@ function fetchDogApi(dogKey, dogId) {
     } else {
         document.getElementById('dogOrigin').innerHTML = dogOrigin;
     }
-    if(breedFor === undefined) {
+    if(bredFor === undefined) {
         document.getElementById('dogFacts').innerHTML = '-';
     } else {
-        document.getElementById('dogFacts').innerHTML = breedFor;
+        document.getElementById('dogFacts').innerHTML = bredFor;
     }
 
    })
